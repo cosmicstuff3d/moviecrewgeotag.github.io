@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize MapLibre GL with 3D Globe Projection
   const map = new maplibregl.Map({
     container: "map",
-    style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", // Dark Globe Style
+    style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
     center: [0, 20],
     zoom: 1.5,
     pitch: 35,
-    projection: "globe" // Render as a 3D spinning globe
+    projection: "globe"
   });
 
   map.addControl(new maplibregl.NavigationControl(), "top-right");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("crew_data.json")
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Could not load crew_data.json yet.");
+        throw new Error("Could not load crew_data.json.");
       }
       return response.json();
     })
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => {
       console.error("Data error:", err);
-      document.getElementById("movie-title").innerText = "Waiting for crew_data.json...";
+      document.getElementById("movie-title").innerText = "Error loading data";
     });
 });
 
@@ -35,20 +35,26 @@ function renderCreditsAndMarkers(crewList, map) {
   crewList.forEach((person, index) => {
     const [lng, lat] = person.coordinates;
 
-    // Create a physical pin marker on the globe for this person
+    // Create marker DOM element
     const el = document.createElement("div");
     el.className = "custom-marker";
-    
-    new maplibregl.Marker(el)
+
+    // Build Pop-up instance for when the marker pin is clicked
+    const popup = new maplibregl.Popup({ offset: 15, closeButton: false }).setHTML(`
+      <div style="font-family: sans-serif;">
+        <strong style="color: #66fcf1; font-size: 1rem;">${person.name}</strong><br/>
+        <span style="color: #ddd; font-size: 0.8rem;">${person.role}</span><br/>
+        <span style="color: #e62429; font-size: 0.8rem;">📍 ${person.locationName}</span>
+      </div>
+    `);
+
+    // Attach Marker and Popup to map
+    const marker = new maplibregl.Marker(el)
       .setLngLat([lng, lat])
-      .setPopup(
-        new maplibregl.Popup({ offset: 25 }).setHTML(
-          `<strong>${person.name}</strong><br/>${person.role}<br/>📍 ${person.locationName}`
-        )
-      )
+      .setPopup(popup)
       .addTo(map);
 
-    // Create the credit DOM card for the scrolling left panel
+    // Create the compact credit card DOM element
     const card = document.createElement("div");
     card.className = "credit-card";
     card.dataset.index = index;
@@ -61,10 +67,21 @@ function renderCreditsAndMarkers(crewList, map) {
       <div class="location">📍 ${person.locationName}</div>
     `;
 
+    // Click on a credit card directly to open popup and fly map to location
+    card.addEventListener("click", () => {
+      map.flyTo({
+        center: [lng, lat],
+        zoom: 5.5,
+        pitch: 50,
+        speed: 1.0,
+        essential: true
+      });
+      marker.togglePopup();
+    });
+
     creditsListContainer.appendChild(card);
   });
 
-  // 3. Attach IntersectionObserver to handle smooth flyTo actions
   setupScrollObserver(map);
 }
 
@@ -74,25 +91,23 @@ function setupScrollObserver(map) {
 
   const observerOptions = {
     root: creditsPanel,
-    threshold: 0.6 // Triggers when 60% of the credit card is visible
+    threshold: 0.4 // Adjusted for smaller compact card heights
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Highlight current card
         cards.forEach((c) => c.classList.remove("active"));
         entry.target.classList.add("active");
 
         const lng = parseFloat(entry.target.dataset.lng);
         const lat = parseFloat(entry.target.dataset.lat);
 
-        // Smooth camera flight transition across the globe
         map.flyTo({
           center: [lng, lat],
           zoom: 5.5,
           pitch: 50,
-          bearing: Math.random() * 30 - 15, // Subtle camera tilt variation
+          bearing: Math.random() * 30 - 15,
           speed: 0.9,
           curve: 1.2,
           essential: true
