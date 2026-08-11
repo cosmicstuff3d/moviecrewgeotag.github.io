@@ -1,0 +1,761 @@
+{
+  "movie": "Spider-Man: Across the Spider-Verse",
+  "crew": [
+    {
+      "name": "Justin K. Thompson",
+      "role": "Director (Directing)",
+      "locationName": "New York City, New York, USA",
+      "coordinates": [
+        -74.0060152,
+        40.7127281
+      ]
+    },
+    {
+      "name": "Kemp Powers",
+      "role": "Director (Directing)",
+      "locationName": "Brooklyn, New York City, New York, USA",
+      "coordinates": [
+        -73.9497211,
+        40.6526006
+      ]
+    },
+    {
+      "name": "Avi Arad",
+      "role": "Producer (Production)",
+      "locationName": "Givatayim, Israel",
+      "coordinates": [
+        34.8113279,
+        32.0729606
+      ]
+    },
+    {
+      "name": "Mary Hidalgo",
+      "role": "Casting (Production)",
+      "locationName": "Pasadena, California, USA",
+      "coordinates": [
+        -118.144155,
+        34.1476507
+      ]
+    },
+    {
+      "name": "Daniel Pemberton",
+      "role": "Original Music Composer (Sound)",
+      "locationName": "UK",
+      "coordinates": [
+        -3.2765753,
+        54.7023545
+      ]
+    },
+    {
+      "name": "Aditya Sood",
+      "role": "Executive Producer (Production)",
+      "locationName": "USA",
+      "coordinates": [
+        -100.445882,
+        39.7837304
+      ]
+    },
+    {
+      "name": "Kris Anka",
+      "role": "Character Designer (Visual Effects)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Peter Ramsey",
+      "role": "Executive Producer (Production)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Rodney Rothman",
+      "role": "Executive Producer (Production)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Bob Persichetti",
+      "role": "Executive Producer (Production)",
+      "locationName": "Los Angeles County, California, USA",
+      "coordinates": [
+        -118.209681,
+        34.3155072
+      ]
+    },
+    {
+      "name": "Brian Michael Bendis",
+      "role": "Executive Producer (Production)",
+      "locationName": "Cleveland, Ohio, USA",
+      "coordinates": [
+        -81.6936772,
+        41.4996574
+      ]
+    },
+    {
+      "name": "David Callaham",
+      "role": "Writer (Writing)",
+      "locationName": "Fresno, California, USA",
+      "coordinates": [
+        -119.78483,
+        36.7394421
+      ]
+    },
+    {
+      "name": "Phil Lord",
+      "role": "Writer (Writing)",
+      "locationName": "Miami, Florida, USA",
+      "coordinates": [
+        -80.1935973,
+        25.7741566
+      ]
+    },
+    {
+      "name": "Christopher Miller",
+      "role": "Writer (Writing)",
+      "locationName": "Everett, Washington, USA",
+      "coordinates": [
+        -122.2127011,
+        47.9793437
+      ]
+    },
+    {
+      "name": "Aymeric Kevin",
+      "role": "Other (Art)",
+      "locationName": "France",
+      "coordinates": [
+        1.8883335,
+        46.603354
+      ]
+    },
+    {
+      "name": "Jesús Alonso Iglesias",
+      "role": "Character Designer (Visual Effects)",
+      "locationName": "Madrid, Spain",
+      "coordinates": [
+        -3.703507,
+        40.416782
+      ]
+    },
+    {
+      "name": "Michael Lasker",
+      "role": "Visual Effects Supervisor (Visual Effects)",
+      "locationName": "USA",
+      "coordinates": [
+        -100.445882,
+        39.7837304
+      ]
+    },
+    {
+      "name": "Christian Hejnal",
+      "role": "Line Producer (Production)",
+      "locationName": "Berwyn, Illinois, USA",
+      "coordinates": [
+        -87.7936685,
+        41.8505874
+      ]
+    },
+    {
+      "name": "Octavio E. Rodriguez",
+      "role": "Head of Story (Writing)",
+      "locationName": "California, USA",
+      "coordinates": [
+        -118.755997,
+        36.7014631
+      ]
+    },
+    {
+      "name": "Jason Latour",
+      "role": "Production Consultant (Production)",
+      "locationName": "Charlotte, North Carolina, USA",
+      "coordinates": [
+        -80.8430827,
+        35.2272086
+      ]
+    },
+    {
+      "name": "Thenmozhi Soundararajan",
+      "role": "Production Consultant (Production)",
+      "locationName": "Madurai, Tamil Nadu, India",
+      "coordinates": [
+        78.1140983,
+        9.9261153
+      ]
+    },
+    {
+      "name": "Mike Rianda",
+      "role": "Production Consultant (Production)",
+      "locationName": "Salinas, California, USA",
+      "coordinates": [
+        -121.655037,
+        36.6744117
+      ]
+    },
+    {
+      "name": "Dan Slott",
+      "role": "Production Consultant (Production)",
+      "locationName": "USA",
+      "coordinates": [
+        -100.445882,
+        39.7837304
+      ]
+    },
+    {
+      "name": "Reggie Yates",
+      "role": "Production Consultant (Production)",
+      "locationName": "Islington, London, England, UK",
+      "coordinates": [
+        -0.0999051,
+        51.5384287
+      ]
+    },
+    {
+      "name": "Wendell Dalit",
+      "role": "Visual Development (Visual Effects)",
+      "locationName": "Manila, Philippines",
+      "coordinates": [
+        120.9803621,
+        14.5904492
+      ]
+    },
+    {
+      "name": "Melanie Duke",
+      "role": "Story Coordinator (Writing)",
+      "locationName": "San Diego, California, USA",
+      "coordinates": [
+        -117.162772,
+        32.7174202
+      ]
+    },
+    {
+      "name": "Joe Moshier",
+      "role": "Character Designer (Visual Effects)",
+      "locationName": "San Diego, California, USA",
+      "coordinates": [
+        -117.162772,
+        32.7174202
+      ]
+    },
+    {
+      "name": "Juan Couto",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Spain",
+      "coordinates": [
+        -4.8379791,
+        39.3260685
+      ]
+    },
+    {
+      "name": "Bohdan Frantsishko",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Kamianets-Podilskyi, Khmelnytskyi Oblast, Ukraine",
+      "coordinates": [
+        26.5854027,
+        48.6781294
+      ]
+    },
+    {
+      "name": "Katia Cisneros Angulo",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Guadalajara, Jalisco, Mexico",
+      "coordinates": [
+        -103.338396,
+        20.6720375
+      ]
+    },
+    {
+      "name": "Thanawat Khantrum",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Bangkok, Thailand",
+      "coordinates": [
+        100.4935089,
+        13.7524938
+      ]
+    },
+    {
+      "name": "Remus Low",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Singapore",
+      "coordinates": [
+        103.8194992,
+        1.357107
+      ]
+    },
+    {
+      "name": "Ryusuke Furuya",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Japan",
+      "coordinates": [
+        139.2394179,
+        36.5748441
+      ]
+    },
+    {
+      "name": "Robert Getty",
+      "role": "Dialogue Editor (Sound)",
+      "locationName": "Reading, Pennsylvania, USA",
+      "coordinates": [
+        -75.9279495,
+        40.335345
+      ]
+    },
+    {
+      "name": "Li Wen Toh",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Singapore",
+      "coordinates": [
+        103.8194992,
+        1.357107
+      ]
+    },
+    {
+      "name": "Greg ten Bosch",
+      "role": "Sound Effects Editor (Sound)",
+      "locationName": "San Leandro, California, USA",
+      "coordinates": [
+        -122.1560768,
+        37.7249296
+      ]
+    },
+    {
+      "name": "Preston Mutanga",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Milton, Ontario, Canada",
+      "coordinates": [
+        -79.882817,
+        43.513671
+      ]
+    },
+    {
+      "name": "Michael Semanick",
+      "role": "Sound Re-Recording Mixer (Sound)",
+      "locationName": "Jackson, Minnesota, USA",
+      "coordinates": [
+        -95.1500626,
+        43.670011
+      ]
+    },
+    {
+      "name": "Gregg Barbanell",
+      "role": "Foley Artist (Sound)",
+      "locationName": "San Francisco, California, USA",
+      "coordinates": [
+        -122.4075201,
+        37.7879363
+      ]
+    },
+    {
+      "name": "Stalin Ranjith Selvanayagam",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Chennai, India",
+      "coordinates": [
+        80.270186,
+        13.0836939
+      ]
+    },
+    {
+      "name": "Matt Dunkley",
+      "role": "Conductor (Sound)",
+      "locationName": "Croydon, London, England, UK",
+      "coordinates": [
+        -0.101957,
+        51.3713049
+      ]
+    },
+    {
+      "name": "Daniel McNamara",
+      "role": "Sound Effects Editor (Sound)",
+      "locationName": "Voorhees, New Jersey, USA",
+      "coordinates": [
+        -74.9619779,
+        39.8512162
+      ]
+    },
+    {
+      "name": "Caitlin McKenna",
+      "role": "ADR Voice Casting (Production)",
+      "locationName": "Galway, Ireland",
+      "coordinates": [
+        -9.0490601,
+        53.2744122
+      ]
+    },
+    {
+      "name": "Joan Pons",
+      "role": "Compositing Artist (Visual Effects)",
+      "locationName": "Igualada, Barcelona, Catalonia, Spain",
+      "coordinates": [
+        1.617346,
+        41.5790182
+      ]
+    },
+    {
+      "name": "Ian McQue",
+      "role": "Other (Art)",
+      "locationName": "Edinburgh, Scotland, UK",
+      "coordinates": [
+        -3.1883749,
+        55.9533456
+      ]
+    },
+    {
+      "name": "René Völker",
+      "role": "Modeling (Visual Effects)",
+      "locationName": "Austria",
+      "coordinates": [
+        14.12456,
+        47.59397
+      ]
+    },
+    {
+      "name": "Joaquim Dos Santos",
+      "role": "Director (Directing)",
+      "locationName": "Lisbon, Portugal",
+      "coordinates": [
+        -9.1365919,
+        38.7077507
+      ]
+    },
+    {
+      "name": "Amy Pascal",
+      "role": "Producer (Production)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Pierre Perifel",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Lyon, Rhône, France",
+      "coordinates": [
+        4.8320114,
+        45.7578137
+      ]
+    },
+    {
+      "name": "Alan Hawkins",
+      "role": "Head of Animation (Visual Effects)",
+      "locationName": "Albuquerque, New Mexico, USA",
+      "coordinates": [
+        -106.650985,
+        35.0841034
+      ]
+    },
+    {
+      "name": "Metro Boomin",
+      "role": "Songs (Sound)",
+      "locationName": "St. Louis, Missouri, USA",
+      "coordinates": [
+        -90.190009,
+        38.6254063
+      ]
+    },
+    {
+      "name": "Mike Dean",
+      "role": "Songs (Sound)",
+      "locationName": "Houston, Texas, USA",
+      "coordinates": [
+        -95.3676974,
+        29.7589382
+      ]
+    },
+    {
+      "name": "Peter Lee Johnson",
+      "role": "Songs (Sound)",
+      "locationName": "Seattle, Washington, USA",
+      "coordinates": [
+        -122.330062,
+        47.6038321
+      ]
+    },
+    {
+      "name": "A$AP Rocky",
+      "role": "Songs (Sound)",
+      "locationName": "Harlem, New York, USA",
+      "coordinates": [
+        -73.9454671,
+        40.8078578
+      ]
+    },
+    {
+      "name": "Luis De La Rosa Obregón",
+      "role": "Animation (Visual Effects)",
+      "locationName": "Mexico",
+      "coordinates": [
+        -102.0077097,
+        23.6585116
+      ]
+    },
+    {
+      "name": "Chris Mitchell",
+      "role": "Additional Storyboarding (Art)",
+      "locationName": "Cupertino, California, USA",
+      "coordinates": [
+        -122.0322895,
+        37.3228934
+      ]
+    },
+    {
+      "name": "Dominic Fike",
+      "role": "Songs (Sound)",
+      "locationName": "Naples, Florida, USA",
+      "coordinates": [
+        -81.7942944,
+        26.1421976
+      ]
+    },
+    {
+      "name": "Offset",
+      "role": "Songs (Sound)",
+      "locationName": "Lawrenceville, Georgia, USA",
+      "coordinates": [
+        -83.9890066,
+        33.9566391
+      ]
+    },
+    {
+      "name": "Lil Wayne",
+      "role": "Songs (Sound)",
+      "locationName": "New Orleans, Louisiana, USA",
+      "coordinates": [
+        -90.0733934,
+        29.9561422
+      ]
+    },
+    {
+      "name": "Swae Lee",
+      "role": "Songs (Sound)",
+      "locationName": "Inglewood, California, USA",
+      "coordinates": [
+        -118.353132,
+        33.9562003
+      ]
+    },
+    {
+      "name": "Future",
+      "role": "Songs (Sound)",
+      "locationName": "Atlanta, Georgia, USA",
+      "coordinates": [
+        -84.3898151,
+        33.7544657
+      ]
+    },
+    {
+      "name": "Lil Uzi Vert",
+      "role": "Songs (Sound)",
+      "locationName": "Philadelphia, Pennsylvania, USA",
+      "coordinates": [
+        -75.1635262,
+        39.9527237
+      ]
+    },
+    {
+      "name": "JID",
+      "role": "Songs (Sound)",
+      "locationName": "Atlanta, Georgia, USA",
+      "coordinates": [
+        -84.3898151,
+        33.7544657
+      ]
+    },
+    {
+      "name": "James Blake",
+      "role": "Songs (Sound)",
+      "locationName": "London, England",
+      "coordinates": [
+        -0.1277653,
+        51.5074456
+      ]
+    },
+    {
+      "name": "Don Toliver",
+      "role": "Songs (Sound)",
+      "locationName": "Houston, Texas, USA",
+      "coordinates": [
+        -95.3676974,
+        29.7589382
+      ]
+    },
+    {
+      "name": "21 Savage",
+      "role": "Songs (Sound)",
+      "locationName": "Plaistow, London, England, UK",
+      "coordinates": [
+        0.0166833,
+        51.5311544
+      ]
+    },
+    {
+      "name": "2 Chainz",
+      "role": "Songs (Sound)",
+      "locationName": "College Park, Georgia, USA",
+      "coordinates": [
+        -84.4493725,
+        33.6534427
+      ]
+    },
+    {
+      "name": "Becky G",
+      "role": "Songs (Sound)",
+      "locationName": "Inglewood, California, USA",
+      "coordinates": [
+        -118.353132,
+        33.9562003
+      ]
+    },
+    {
+      "name": "Ayra Starr",
+      "role": "Songs (Sound)",
+      "locationName": "Cotonou, Benin",
+      "coordinates": [
+        2.4252507,
+        6.3676953
+      ]
+    },
+    {
+      "name": "Shameik Moore",
+      "role": "Voice of Miles Morales (voice)",
+      "locationName": "Atlanta, Georgia, USA",
+      "coordinates": [
+        -84.3898151,
+        33.7544657
+      ]
+    },
+    {
+      "name": "Hailee Steinfeld",
+      "role": "Voice of Gwen Stacy (voice)",
+      "locationName": "Tarzana, Los Angeles, California, USA",
+      "coordinates": [
+        -118.5365791,
+        34.1689262
+      ]
+    },
+    {
+      "name": "Brian Tyree Henry",
+      "role": "Voice of Jeff Morales (voice)",
+      "locationName": "Fayetteville, North Carolina, USA",
+      "coordinates": [
+        -78.878292,
+        35.0525759
+      ]
+    },
+    {
+      "name": "Luna Lauren Vélez",
+      "role": "Voice of Rio Morales (voice)",
+      "locationName": "Brooklyn, New York City, New York, USA",
+      "coordinates": [
+        -73.9497211,
+        40.6526006
+      ]
+    },
+    {
+      "name": "Jake Johnson",
+      "role": "Voice of Peter B. Parker (voice)",
+      "locationName": "Evanston, Illinois, USA",
+      "coordinates": [
+        -87.682932,
+        42.0693991
+      ]
+    },
+    {
+      "name": "Oscar Isaac",
+      "role": "Voice of Miguel O'Hara (voice)",
+      "locationName": "Guatemala City, Guatemala",
+      "coordinates": [
+        -90.5132836,
+        14.6416142
+      ]
+    },
+    {
+      "name": "Jason Schwartzman",
+      "role": "Voice of Spot (voice)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Issa Rae",
+      "role": "Voice of Jessica Drew (voice)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Daniel Kaluuya",
+      "role": "Voice of Hobie Brown (voice)",
+      "locationName": "London, England, UK",
+      "coordinates": [
+        -0.1277653,
+        51.5074456
+      ]
+    },
+    {
+      "name": "Karan Soni",
+      "role": "Voice of Pavitr Prabhakar (voice)",
+      "locationName": "New Delhi, India",
+      "coordinates": [
+        77.2090057,
+        28.6138954
+      ]
+    },
+    {
+      "name": "Shea Whigham",
+      "role": "Voice of George Stacy (voice)",
+      "locationName": "Tallahassee, Florida, USA",
+      "coordinates": [
+        -84.2809332,
+        30.4380832
+      ]
+    },
+    {
+      "name": "Greta Lee",
+      "role": "Voice of LYLA (voice)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Mahershala Ali",
+      "role": "Voice of Uncle Aaron (voice)",
+      "locationName": "Oakland, California, USA",
+      "coordinates": [
+        -122.271356,
+        37.8044557
+      ]
+    },
+    {
+      "name": "Amandla Stenberg",
+      "role": "Voice of Margo Kess: Spider-Byte (voice)",
+      "locationName": "Los Angeles, California, USA",
+      "coordinates": [
+        -118.242766,
+        34.0536909
+      ]
+    },
+    {
+      "name": "Jharrel Jerome",
+      "role": "Voice of Miles G. Morales (voice)",
+      "locationName": "The Bronx, New York City, New York, USA",
+      "coordinates": [
+        -73.8785937,
+        40.8466508
+      ]
+    }
+  ]
+}
