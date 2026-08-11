@@ -1,1 +1,32 @@
-<h1> Movie Crew Geo Tag</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spider-Man: Across the Spider-Verse - Crew Map</title>
+  
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app-container">
+    <aside id="credits-panel">
+      <header id="credits-header">
+        <h1 id="movie-title">Loading Movie...</h1>
+        <p class="subtitle">Crew & Cast Global Origin Map</p>
+      </header>
+      <div id="credits-list">
+        </div>
+    </aside>
+
+    <main id="map-container">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
