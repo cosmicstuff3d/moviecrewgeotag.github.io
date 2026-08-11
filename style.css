@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0b0c10;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Left Panel - Scrolling Credits */
+#credits-panel {
+  width: 40%;
+  height: 100vh;
+  overflow-y: auto;
+  background: rgba(15, 15, 25, 0.95);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 1.5rem;
+  scroll-behavior: smooth;
+  z-index: 10;
+}
+
+#credits-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#movie-title {
+  font-size: 1.8rem;
+  color: #e62429; /* Spider-Verse Red Accent */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Individual Credit Cards */
+.credit-card {
+  min-height: 45vh; /* Gives breathing room between triggers */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #1f2833;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.credit-card.active {
+  border-left-color: #e62429;
+  background: rgba(230, 36, 41, 0.1);
+  transform: scale(1.02);
+}
+
+.role {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #66fcf1;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: #c5c6c7;
+}
+
+/* Right Panel - Map Container */
+#map-container {
+  width: 60%;
+  height: 100vh;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom Map Marker Style */
+.custom-marker {
+  width: 16px;
+  height: 16px;
+  background-color: #e62429;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #e62429;
+  cursor: pointer;
+}
