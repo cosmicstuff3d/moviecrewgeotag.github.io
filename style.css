@@ -14,6 +14,7 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #e62429;
   --subtext-color: #c5c6c7;
+  --role-color: #66fcf1; /* Bright turquoise for dark mode */
 }
 
 body.light-mode {
@@ -25,6 +26,7 @@ body.light-mode {
   --card-active-bg: rgba(230, 36, 41, 0.1);
   --border-color: rgba(0, 0, 0, 0.1);
   --subtext-color: #555555;
+  --role-color: #007a87; /* Rich, high-contrast deep teal/turquoise for light mode */
 }
 
 body {
@@ -72,7 +74,6 @@ body {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* Drawer handle hidden on desktop */
 #drawer-handle {
   display: none;
 }
@@ -97,7 +98,7 @@ body {
   margin-top: 0.25rem;
 }
 
-/* Compact Credit Cards */
+/* Credit Cards */
 .credit-card {
   min-height: 16vh;
   display: flex;
@@ -126,7 +127,7 @@ body {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: #66fcf1;
+  color: var(--role-color);
   margin-bottom: 0.25rem;
 }
 
@@ -189,6 +190,23 @@ body {
   border-top-color: var(--panel-bg) !important;
 }
 
+/* Popup Content Helper Classes */
+.popup-name {
+  color: var(--role-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.popup-role {
+  color: var(--text-color);
+  font-size: 0.8rem;
+}
+
+.popup-location {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+}
+
 /* --- MOBILE RESPONSIVE OVERHAUL (< 768px) --- */
 @media (max-width: 768px) {
   #app-container {
@@ -204,13 +222,12 @@ body {
     z-index: 1;
   }
 
-  /* Bottom Floating Drawer */
   #credits-panel {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 32vh; /* Default compact height */
+    height: 32vh;
     background: var(--panel-bg);
     backdrop-filter: blur(12px);
     border-top: 1px solid var(--border-color);
@@ -221,12 +238,10 @@ body {
     transition: height 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
   }
 
-  /* Drawer Expanded State (Swipe Up / Full Screen) */
   #credits-panel.expanded {
     height: 88vh;
   }
 
-  /* Drawer Handle for Swiping / Tapping */
   #drawer-handle {
     display: flex;
     flex-direction: column;
