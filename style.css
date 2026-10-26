@@ -1,22 +1,62 @@
-/* --- Base Styles (Desktop Default) --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --bg-color: #0b0c10;
+  --text-color: #ffffff;
+  --panel-bg: rgba(15, 15, 25, 0.95);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.07);
+  --card-active-bg: rgba(230, 36, 41, 0.15);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #e62429;
+  --subtext-color: #c5c6c7;
+}
+
+body.light-mode {
+  --bg-color: #f0f2f5;
+  --text-color: #1a1a1a;
+  --panel-bg: rgba(255, 255, 255, 0.95);
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-hover: rgba(0, 0, 0, 0.06);
+  --card-active-bg: rgba(230, 36, 41, 0.1);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --subtext-color: #555555;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #0b0c10;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+#theme-toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 30;
+  background: var(--panel-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
 }
 
 #app-container {
   display: flex;
   width: 100vw;
   height: 100vh;
-  position: relative;
 }
 
 /* Left Panel - Scrolling Credits */
@@ -24,33 +64,40 @@ body {
   width: 35%;
   height: 100vh;
   overflow-y: auto;
-  background: rgba(15, 15, 25, 0.95);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border-color);
   padding: 1.25rem 1rem;
   scroll-behavior: smooth;
   z-index: 10;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Drawer handle hidden on desktop */
+#drawer-handle {
+  display: none;
 }
 
 #credits-header {
   margin-bottom: 1.5rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
 }
 
 #movie-title {
   font-size: 1.4rem;
-  color: #e62429;
+  color: var(--accent-color);
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
 
 .subtitle {
-  color: #888;
+  color: var(--subtext-color);
   font-size: 0.8rem;
   margin-top: 0.25rem;
 }
 
+/* Compact Credit Cards */
 .credit-card {
   min-height: 16vh;
   display: flex;
@@ -58,7 +105,7 @@ body {
   justify-content: center;
   padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--card-bg);
   border-left: 3px solid #1f2833;
   border-radius: 6px;
   cursor: pointer;
@@ -66,12 +113,12 @@ body {
 }
 
 .credit-card:hover {
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--card-hover);
 }
 
 .credit-card.active {
-  border-left-color: #e62429;
-  background: rgba(230, 36, 41, 0.15);
+  border-left-color: var(--accent-color);
+  background: var(--card-active-bg);
   transform: scale(1.01);
 }
 
@@ -86,13 +133,13 @@ body {
 .name {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 0.25rem;
 }
 
 .location {
   font-size: 0.82rem;
-  color: #c5c6c7;
+  color: var(--subtext-color);
 }
 
 /* Right Panel - Map Container */
@@ -107,13 +154,47 @@ body {
   height: 100%;
 }
 
+/* Custom Map Marker Style */
+.custom-marker {
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent-color);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.custom-marker:hover {
+  transform: scale(1.3);
+}
+
+/* MapLibre Popup Styling */
+.maplibregl-popup-content {
+  background: var(--panel-bg) !important;
+  color: var(--text-color) !important;
+  border-radius: 6px;
+  padding: 10px 14px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-size: 0.85rem;
+  border: 1px solid rgba(230, 36, 41, 0.5);
+}
+
+.maplibregl-popup-anchor-top .maplibregl-popup-tip,
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip,
+.maplibregl-popup-anchor-left .maplibregl-popup-tip,
+.maplibregl-popup-anchor-right .maplibregl-popup-tip {
+  border-bottom-color: var(--panel-bg) !important;
+  border-top-color: var(--panel-bg) !important;
+}
+
 /* --- MOBILE RESPONSIVE OVERHAUL (< 768px) --- */
 @media (max-width: 768px) {
   #app-container {
     flex-direction: column;
   }
 
-  /* Map takes full background screen */
   #map-container {
     width: 100vw;
     height: 100vh;
@@ -123,33 +204,73 @@ body {
     z-index: 1;
   }
 
-  /* Credits panel becomes a sleek bottom floating card drawer */
+  /* Bottom Floating Drawer */
   #credits-panel {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 32vh; /* Compact height so map remains visible above */
-    background: rgba(15, 15, 25, 0.92);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    height: 32vh; /* Default compact height */
+    background: var(--panel-bg);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-color);
     border-right: none;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
     z-index: 10;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5);
+    transition: height 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+
+  /* Drawer Expanded State (Swipe Up / Full Screen) */
+  #credits-panel.expanded {
+    height: 88vh;
+  }
+
+  /* Drawer Handle for Swiping / Tapping */
+  #drawer-handle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0 10px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .handle-bar {
+    width: 40px;
+    height: 5px;
+    background: var(--subtext-color);
+    border-radius: 3px;
+    margin-bottom: 4px;
+  }
+
+  #drawer-label {
+    font-size: 0.72rem;
+    color: var(--subtext-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   #credits-header {
-    display: none; /* Hide heavy headers on mobile to save vertical space */
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  #movie-title {
+    font-size: 1.2rem;
   }
 
   .credit-card {
-    min-height: 12vh;
-    margin-bottom: 0.5rem;
-    background: rgba(255, 255, 255, 0.06);
+    min-height: 14vh;
+    margin-bottom: 0.6rem;
   }
 
-  .name {
-    font-size: 1rem;
+  #theme-toggle-btn {
+    top: 12px;
+    left: 15px;
+    right: auto;
+    padding: 6px 10px;
+    font-size: 0.75rem;
   }
 }
