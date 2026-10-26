@@ -84,7 +84,7 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       <div class="location">📍 ${person.locationName}</div>
     `;
 
-    // Marker Click Event: Open popup, highlight card, and scroll to it automatically
+    // Marker Click Event: Open popup, highlight card, scroll to it, and restore drawer if hidden
     el.addEventListener("click", (e) => {
       e.stopPropagation();
       const currentActive = getActivePopup();
@@ -98,6 +98,14 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       document.querySelectorAll(".credit-card").forEach((c) => c.classList.remove("active"));
       card.classList.add("active");
       card.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      // If mobile drawer was hidden to show full map, bring it back to compact view so user sees details
+      const creditsPanel = document.getElementById("credits-panel");
+      const restoreBtn = document.getElementById("restore-credits-btn");
+      if (creditsPanel.classList.contains("hidden-drawer")) {
+        creditsPanel.classList.remove("hidden-drawer");
+        if (restoreBtn) restoreBtn.classList.remove("visible");
+      }
     });
 
     // Card Click Event: Fly map to location and open popup
@@ -166,14 +174,61 @@ function setupMobileDrawer() {
 
   if (!drawerHandle) return;
 
-  let isExpanded = false;
+  // Create Restore Button dynamically if not in index.html
+  let restoreBtn = document.getElementById("restore-credits-btn");
+  if (!restoreBtn) {
+    restoreBtn = document.createElement("button");
+    restoreBtn.id = "restore-credits-btn";
+    restoreBtn.innerText = "📜 View Credits";
+    document.body.appendChild(restoreBtn);
+  }
 
+  let drawerState = "compact"; // options: 'compact', 'expanded', 'hidden'
+
+  // Tap handle logic (Cycles through states)
   drawerHandle.addEventListener("click", () => {
-    isExpanded = !isExpanded;
-    creditsPanel.classList.toggle("expanded", isExpanded);
-    drawerLabel.innerText = isExpanded ? "Swipe Down to Minimize" : "Swipe Up for Full List";
+    if (drawerState === "compact") {
+      expandDrawer();
+    } else {
+      collapseDrawer();
+    }
   });
 
+  restoreBtn.addEventListener("click", () => {
+    restoreDrawer();
+  });
+
+  function expandDrawer() {
+    drawerState = "expanded";
+    creditsPanel.classList.add("expanded");
+    creditsPanel.classList.remove("hidden-drawer");
+    restoreBtn.classList.remove("visible");
+    drawerLabel.innerText = "Swipe Down to Minimize";
+  }
+
+  function collapseDrawer() {
+    drawerState = "compact";
+    creditsPanel.classList.remove("expanded");
+    creditsPanel.classList.remove("hidden-drawer");
+    restoreBtn.classList.remove("visible");
+    drawerLabel.innerText = "Swipe Up for Full List";
+  }
+
+  function hideDrawer() {
+    drawerState = "hidden";
+    creditsPanel.classList.add("hidden-drawer");
+    creditsPanel.classList.remove("expanded");
+    restoreBtn.classList.add("visible");
+  }
+
+  function restoreDrawer() {
+    drawerState = "compact";
+    creditsPanel.classList.remove("hidden-drawer");
+    restoreBtn.classList.remove("visible");
+    drawerLabel.innerText = "Swipe Up for Full List";
+  }
+
+  // Touch Swipe Gesture detection
   let touchStartY = 0;
   let touchEndY = 0;
 
@@ -188,14 +243,20 @@ function setupMobileDrawer() {
 
   function handleSwipe() {
     const swipeThreshold = 50;
-    if (touchStartY - touchEndY > swipeThreshold && !isExpanded) {
-      isExpanded = true;
-      creditsPanel.classList.add("expanded");
-      drawerLabel.innerText = "Swipe Down to Minimize";
-    } else if (touchEndY - touchStartY > swipeThreshold && isExpanded) {
-      isExpanded = false;
-      creditsPanel.classList.remove("expanded");
-      drawerLabel.innerText = "Swipe Up for Full List";
+    const diff = touchEndY - touchStartY;
+
+    if (touchStartY - touchEndY > swipeThreshold) {
+      // Swiped Up
+      if (drawerState === "compact") {
+        expandDrawer();
+      }
+    } else if (diff > swipeThreshold) {
+      // Swiped Down
+      if (drawerState === "expanded") {
+        collapseDrawer();
+      } else if (drawerState === "compact") {
+        hideDrawer(); // Swipe down from compact hides drawer completely to see map only!
+      }
     }
   }
 }
