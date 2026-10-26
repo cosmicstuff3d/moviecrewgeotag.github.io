@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spider-Man: Across the Spider-Verse - Crew Map</title>
+  <title>Movie Crew & Cast Origin Map</title>
   
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
@@ -12,14 +12,22 @@
 </head>
 <body>
 
+  <!-- Theme Toggle Button (Desktop & Mobile) -->
+  <button id="theme-toggle-btn" title="Toggle Light/Dark Mode">☀️ Light Mode</button>
+
   <div id="app-container">
     <aside id="credits-panel">
+      <!-- Mobile Swipe/Drag Handle -->
+      <div id="drawer-handle">
+        <div class="handle-bar"></div>
+        <span id="drawer-label">Swipe Up for Full List</span>
+      </div>
+
       <header id="credits-header">
         <h1 id="movie-title">Loading Movie...</h1>
-        <p class="subtitle">Crew & Cast Global Origin Map</p>
+        <p class="subtitle">Crew & Cast Global Origins</p>
       </header>
-      <div id="credits-list">
-        </div>
+      <div id="credits-list"></div>
     </aside>
 
     <main id="map-container">
