@@ -72,16 +72,6 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       .setPopup(popup)
       .addTo(map);
 
-    el.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const currentActive = getActivePopup();
-      if (currentActive && currentActive !== popup) {
-        currentActive.remove();
-      }
-      popup.addTo(map);
-      setActivePopup(popup);
-    });
-
     const card = document.createElement("div");
     card.className = "credit-card";
     card.dataset.index = index;
@@ -94,6 +84,23 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       <div class="location">📍 ${person.locationName}</div>
     `;
 
+    // Marker Click Event: Open popup, highlight card, and scroll to it automatically
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const currentActive = getActivePopup();
+      if (currentActive && currentActive !== popup) {
+        currentActive.remove();
+      }
+      popup.addTo(map);
+      setActivePopup(popup);
+
+      // Highlight corresponding card and scroll smoothly into view
+      document.querySelectorAll(".credit-card").forEach((c) => c.classList.remove("active"));
+      card.classList.add("active");
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    // Card Click Event: Fly map to location and open popup
     card.addEventListener("click", () => {
       const currentActive = getActivePopup();
       if (currentActive) {
