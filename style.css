@@ -14,7 +14,7 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #e62429;
   --subtext-color: #c5c6c7;
-  --role-color: #66fcf1; /* Bright turquoise for dark mode */
+  --role-color: #007a87; /* Bright turquoise for dark mode. Color: #66fcf1*/ 
 }
 
 body.light-mode {
