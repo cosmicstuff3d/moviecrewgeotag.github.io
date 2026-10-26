@@ -14,7 +14,7 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #e62429;
   --subtext-color: #c5c6c7;
-  --role-color: #007a87; /* Bright turquoise for dark mode. Color: #66fcf1*/ 
+  --role-color: #66fcf1;
 }
 
 body.light-mode {
@@ -26,7 +26,7 @@ body.light-mode {
   --card-active-bg: rgba(230, 36, 41, 0.1);
   --border-color: rgba(0, 0, 0, 0.1);
   --subtext-color: #555555;
-  --role-color: #007a87; /* Rich, high-contrast deep teal/turquoise for light mode */
+  --role-color: #007a87;
 }
 
 body {
@@ -190,7 +190,6 @@ body {
   border-top-color: var(--panel-bg) !important;
 }
 
-/* Popup Content Helper Classes */
 .popup-name {
   color: var(--role-color);
   font-size: 1rem;
@@ -205,6 +204,11 @@ body {
 .popup-location {
   color: var(--accent-color);
   font-size: 0.8rem;
+}
+
+/* Mobile Restore Credits Button */
+#restore-credits-btn {
+  display: none;
 }
 
 /* --- MOBILE RESPONSIVE OVERHAUL (< 768px) --- */
@@ -222,6 +226,7 @@ body {
     z-index: 1;
   }
 
+  /* Bottom Floating Drawer */
   #credits-panel {
     position: absolute;
     bottom: 0;
@@ -235,11 +240,44 @@ body {
     padding: 0.5rem 1rem 1rem 1rem;
     z-index: 10;
     box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5);
-    transition: height 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.1, 0.9, 0.2, 1), height 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+    transform: translateY(0);
   }
 
+  /* Expanded State (Swipe Up) */
   #credits-panel.expanded {
-    height: 88vh;
+    height: 85vh;
+  }
+
+  /* Hidden State (Swipe Down to see Map Only) */
+  #credits-panel.hidden-drawer {
+    transform: translateY(100%);
+  }
+
+  /* Restore Button when drawer is hidden */
+  #restore-credits-btn.visible {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-6px); }
+    60% { transform: translateX(-50%) translateY(-3px); }
   }
 
   #drawer-handle {
