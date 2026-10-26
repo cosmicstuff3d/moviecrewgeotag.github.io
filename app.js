@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentTheme = "dark";
   let activePopup = null;
 
-  // 1. Initialize MapLibre GL with 3D Globe Projection
   const darkStyle = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
   const lightStyle = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-  // 2. Theme Toggle Logic
   const themeToggleBtn = document.getElementById("theme-toggle-btn");
   themeToggleBtn.addEventListener("click", () => {
     if (currentTheme === "dark") {
@@ -33,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 3. Fetch crew JSON dataset
   fetch("crew_data.json")
     .then((response) => {
       if (!response.ok) {
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("movie-title").innerText = "Error loading data";
     });
 
-  // 4. Mobile Swipe-Up / Tap Expand Drawer Logic
   setupMobileDrawer();
 });
 
@@ -63,12 +59,11 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
     const el = document.createElement("div");
     el.className = "custom-marker";
 
-    // Popup instance (ensures previous popup is removed before opening a new one)
     const popup = new maplibregl.Popup({ offset: 15, closeButton: true }).setHTML(`
       <div style="font-family: sans-serif;">
-        <strong style="color: #66fcf1; font-size: 1rem;">${person.name}</strong><br/>
-        <span style="color: var(--text-color); font-size: 0.8rem;">${person.role}</span><br/>
-        <span style="color: #e62429; font-size: 0.8rem;">📍 ${person.locationName}</span>
+        <div class="popup-name">${person.name}</div>
+        <div class="popup-role">${person.role}</div>
+        <div class="popup-location">📍 ${person.locationName}</div>
       </div>
     `);
 
@@ -77,7 +72,6 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       .setPopup(popup)
       .addTo(map);
 
-    // Marker click event to handle single active popup
     el.addEventListener("click", (e) => {
       e.stopPropagation();
       const currentActive = getActivePopup();
@@ -100,7 +94,6 @@ function renderCreditsAndMarkers(crewList, map, getActivePopup, setActivePopup) 
       <div class="location">📍 ${person.locationName}</div>
     `;
 
-    // Card click event
     card.addEventListener("click", () => {
       const currentActive = getActivePopup();
       if (currentActive) {
@@ -168,14 +161,12 @@ function setupMobileDrawer() {
 
   let isExpanded = false;
 
-  // Tap toggle
   drawerHandle.addEventListener("click", () => {
     isExpanded = !isExpanded;
     creditsPanel.classList.toggle("expanded", isExpanded);
     drawerLabel.innerText = isExpanded ? "Swipe Down to Minimize" : "Swipe Up for Full List";
   });
 
-  // Touch Swipe Gesture detection
   let touchStartY = 0;
   let touchEndY = 0;
 
@@ -191,12 +182,10 @@ function setupMobileDrawer() {
   function handleSwipe() {
     const swipeThreshold = 50;
     if (touchStartY - touchEndY > swipeThreshold && !isExpanded) {
-      // Swiped Up -> Expand
       isExpanded = true;
       creditsPanel.classList.add("expanded");
       drawerLabel.innerText = "Swipe Down to Minimize";
     } else if (touchEndY - touchStartY > swipeThreshold && isExpanded) {
-      // Swiped Down -> Minimize
       isExpanded = false;
       creditsPanel.classList.remove("expanded");
       drawerLabel.innerText = "Swipe Up for Full List";
